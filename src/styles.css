@@ -152,6 +152,7 @@ body {
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
 }
 
 .cheatsheet-content h1 {
@@ -169,8 +170,9 @@ body {
 .cheatsheet-content th,
 .cheatsheet-content td {
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 8px;
   text-align: left;
+  vertical-align: top;
 }
 
 .cheatsheet-content th {
@@ -197,6 +199,36 @@ body {
 
 .cheatsheet-content small {
   color: #555;
+  font-size: 12px;
+}
+
+.cheatsheet-content sup {
+  font-size: 10px;
+}
+
+.cheatsheet-content #footnotes {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.cheatsheet-content #footnotes ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.cheatsheet-content #footnotes li {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.cheatsheet-content #footnotes a {
+  color: #0066cc;
+}
+
+.cheatsheet-content #footnotes .footnote-backref {
+  margin-left: 5px;
+  color: #666;
 }
 
 /* Action buttons on table rows */
