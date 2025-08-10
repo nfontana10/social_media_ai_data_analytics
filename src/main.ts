@@ -69,26 +69,8 @@ class App {
   }
 
   private loadCheatsheet(): void {
-    fetch('./cheatsheet.html')
-      .then(response => response.text())
-      .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const body = doc.body;
-        
-        // Extract the main content (everything except the DOCTYPE, html, head, body tags)
-        const content = body.innerHTML;
-        
-        const cheatsheetRoot = document.getElementById('cheatsheet-root');
-        if (cheatsheetRoot) {
-          cheatsheetRoot.innerHTML = content;
-          this.addActionButtons();
-        }
-      })
-      .catch(error => {
-        console.error('Failed to load cheatsheet:', error);
-        this.showToast('Failed to load cheatsheet content', 'error');
-      });
+    // Content is now embedded directly in the HTML, just add action buttons
+    this.addActionButtons();
   }
 
   private addActionButtons(): void {
