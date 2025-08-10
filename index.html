@@ -6,6 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Jim E Brown Social Media Analytics Tools Cheat Sheet</title>
   <script type="module" src="/src/main.ts"></script>
+  <script>
+    function toggleVideo() {
+      const container = document.getElementById('video-container');
+      if (container.style.display === 'none') {
+        container.style.display = 'block';
+      } else {
+        container.style.display = 'none';
+      }
+    }
+
+    function closeVideo() {
+      const container = document.getElementById('video-container');
+      container.style.display = 'none';
+    }
+
+    // Close video when clicking outside
+    document.addEventListener('click', function(event) {
+      const container = document.getElementById('video-container');
+      const button = document.querySelector('.play-button');
+      if (container.style.display === 'block' && 
+          !container.contains(event.target) && 
+          !button.contains(event.target)) {
+        container.style.display = 'none';
+      }
+    });
+  </script>
   <style>
     /* Reset and base styles */
     * {
@@ -153,6 +179,53 @@
       
       .song-title {
         font-size: 0.8rem;
+      }
+    }
+
+    /* Video Container */
+    .video-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      z-index: 10000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-video {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #ff1493;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(255, 20, 147, 0.3);
+    }
+
+    .close-video:hover {
+      background: #c71585;
+    }
+
+    @media (max-width: 768px) {
+      .video-container {
+        width: 90vw;
+        height: auto;
+      }
+      
+      .video-container iframe {
+        width: 100%;
+        height: 200px;
       }
     }
 
@@ -923,10 +996,22 @@
             <h1>Jim E Brown Social Media Analytics Tools Cheat Sheet</h1>
             <p>This cheat sheet highlights analytics‑focused platforms that help tourism and food businesses collect data, benchmark performance and make strategic decisions. It prioritises tools that monitor existing social media pages rather than generate new content.</p>
             <div class="music-player">
-              <a href="https://www.youtube.com/watch?v=QK8mJJJvaes" target="_blank" class="play-button">
+              <button class="play-button" onclick="toggleVideo()">
                 <span class="play-icon">▶</span>
                 <span class="song-title">Villains of Circumstance - Queens of the Stone Age</span>
-              </a>
+              </button>
+              <div id="video-container" class="video-container" style="display: none;">
+                <iframe 
+                  id="youtube-video"
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/fsqhJcGbaEI?autoplay=1" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+                <button class="close-video" onclick="closeVideo()">×</button>
+              </div>
             </div>
           </div>
         </div>
