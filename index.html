@@ -9,26 +9,35 @@
   <script>
     function toggleVideo() {
       const container = document.getElementById('video-container');
-      if (container.style.display === 'none') {
-        container.style.display = 'block';
+      if (container.classList.contains('show')) {
+        container.classList.remove('show');
+        setTimeout(() => {
+          container.style.display = 'none';
+        }, 300);
       } else {
-        container.style.display = 'none';
+        container.style.display = 'block';
+        setTimeout(() => {
+          container.classList.add('show');
+        }, 10);
       }
     }
 
     function closeVideo() {
       const container = document.getElementById('video-container');
-      container.style.display = 'none';
+      container.classList.remove('show');
+      setTimeout(() => {
+        container.style.display = 'none';
+      }, 300);
     }
 
     // Close video when clicking outside
     document.addEventListener('click', function(event) {
       const container = document.getElementById('video-container');
       const button = document.querySelector('.play-button');
-      if (container.style.display === 'block' && 
+      if (container.classList.contains('show') && 
           !container.contains(event.target) && 
           !button.contains(event.target)) {
-        container.style.display = 'none';
+        closeVideo();
       }
     });
   </script>
@@ -193,6 +202,15 @@
       z-index: 10000;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+
+    .video-container.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
     }
 
     .close-video {
