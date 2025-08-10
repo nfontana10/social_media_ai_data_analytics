@@ -29,6 +29,42 @@
       padding: 0 2rem;
     }
 
+    /* Jim E Brown header styling */
+    .jim-e-brown-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      border: 1px solid #dee2e6;
+    }
+
+    .jim-e-brown-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+    }
+
+    .jim-e-brown-text {
+      flex: 1;
+    }
+
+    .jim-e-brown-text h1 {
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .jim-e-brown-text p {
+      margin: 0;
+      color: #6c757d;
+      line-height: 1.6;
+    }
+
     /* Enhanced Navbar */
     .navbar {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -683,8 +719,13 @@
     <!-- Main content -->
     <div class="main-container">
       <main id="cheatsheet-root" class="cheatsheet-content">
-        <h1>Jim E Brown Social Media Analytics Tools Cheat Sheet</h1>
-        <p>This cheat sheet highlights analytics‑focused platforms that help tourism and food businesses collect data, benchmark performance and make strategic decisions. It prioritises tools that monitor existing social media pages rather than generate new content.</p>
+        <div class="jim-e-brown-header">
+          <img src="/jim_e_brown_website.jpeg" alt="Jim E Brown" class="jim-e-brown-image">
+          <div class="jim-e-brown-text">
+            <h1>Jim E Brown Social Media Analytics Tools Cheat Sheet</h1>
+            <p>This cheat sheet highlights analytics‑focused platforms that help tourism and food businesses collect data, benchmark performance and make strategic decisions. It prioritises tools that monitor existing social media pages rather than generate new content.</p>
+          </div>
+        </div>
         <div class="table-container">
           <table>
             <tr>
