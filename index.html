@@ -9,6 +9,8 @@
   <script>
     function toggleVideo() {
       const container = document.getElementById('video-container');
+      const iframe = document.getElementById('youtube-video');
+      
       if (container.classList.contains('show')) {
         container.classList.remove('show');
         setTimeout(() => {
@@ -18,6 +20,11 @@
         container.style.display = 'block';
         setTimeout(() => {
           container.classList.add('show');
+          // Trigger play by updating the src with autoplay parameter
+          const currentSrc = iframe.src;
+          if (!currentSrc.includes('autoplay=1')) {
+            iframe.src = currentSrc + '&autoplay=1';
+          }
         }, 10);
       }
     }
@@ -1024,7 +1031,7 @@
                   id="youtube-video"
                   width="280" 
                   height="80" 
-                  src="https://www.youtube.com/embed/fsqhJcGbaEI?controls=1&modestbranding=1&rel=0&autoplay=1&mute=0" 
+                  src="https://www.youtube.com/embed/fsqhJcGbaEI?controls=1&modestbranding=1&rel=0" 
                   frameborder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowfullscreen>
