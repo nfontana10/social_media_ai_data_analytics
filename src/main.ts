@@ -18,11 +18,17 @@ class App {
   private currentModalItem: Recommendation | null = null;
 
   constructor() {
-    this.initializeElements();
-    this.setupEventListeners();
-    this.loadCheatsheet();
-    this.renderSavedItems();
-    this.subscribeToStore();
+    try {
+      console.log('App constructor started');
+      this.initializeElements();
+      this.setupEventListeners();
+      this.loadCheatsheet();
+      this.renderSavedItems();
+      this.subscribeToStore();
+      console.log('App constructor completed successfully');
+    } catch (error) {
+      console.error('Error in App constructor:', error);
+    }
   }
 
   private initializeElements(): void {
@@ -74,30 +80,34 @@ class App {
   }
 
   private addActionButtons(): void {
-    const tableRows = document.querySelectorAll('#cheatsheet-root table tr');
-    
-    tableRows.forEach((row, index) => {
-      if (index === 0) return; // Skip header row
+    try {
+      console.log('Adding action buttons...');
+      const tableRows = document.querySelectorAll('#cheatsheet-root table tr');
+      console.log('Found table rows:', tableRows.length);
       
-      const cells = row.querySelectorAll('td');
-      if (cells.length === 0) return;
-      
-      const firstCell = cells[0];
-      const link = firstCell.querySelector('a');
-      if (!link) return;
-      
-      const title = link.textContent?.trim() || '';
-      const url = link.getAttribute('href') || '';
-      
-      // Create action buttons container
-      const actionButtons = document.createElement('div');
-      actionButtons.className = 'action-buttons';
-      
-      // Save button
-      const saveBtn = document.createElement('button');
-      saveBtn.className = 'btn btn-primary btn-small';
-      saveBtn.textContent = 'Save';
-      saveBtn.addEventListener('click', () => this.handleSave(title, url));
+      tableRows.forEach((row, index) => {
+        if (index === 0) return; // Skip header row
+        
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 0) return;
+        
+        const firstCell = cells[0];
+        const link = firstCell.querySelector('a');
+        if (!link) return;
+        
+        const title = link.textContent?.trim() || '';
+        const url = link.getAttribute('href') || '';
+        console.log('Processing row:', title);
+        
+        // Create action buttons container
+        const actionButtons = document.createElement('div');
+        actionButtons.className = 'action-buttons';
+        
+        // Save button
+        const saveBtn = document.createElement('button');
+        saveBtn.className = 'btn btn-primary btn-small';
+        saveBtn.textContent = 'Save';
+        saveBtn.addEventListener('click', () => this.handleSave(title, url));
       
       // More info button
       const infoBtn = document.createElement('button');
@@ -112,6 +122,10 @@ class App {
       const lastCell = cells[cells.length - 1];
       lastCell.appendChild(actionButtons);
     });
+    console.log('Action buttons added successfully');
+  } catch (error) {
+    console.error('Error adding action buttons:', error);
+  }
   }
 
   private handleSearch(): void {
