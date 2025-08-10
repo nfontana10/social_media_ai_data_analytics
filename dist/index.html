@@ -135,9 +135,10 @@
     }
 
     td {
-      padding: 1rem 0.75rem;
-      border-bottom: 1px solid #f0f0f0;
-      vertical-align: top;
+      padding: 1rem 0.75rem !important;
+      border-bottom: 1px solid #f0f0f0 !important;
+      vertical-align: top !important;
+      position: relative !important;
     }
 
     tr:hover {
@@ -146,28 +147,33 @@
 
     /* Action Buttons */
     .action-buttons {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+      display: flex !important;
+      gap: 0.5rem !important;
+      flex-wrap: wrap !important;
+      margin-top: 0.5rem !important;
+      padding: 0.5rem 0 !important;
     }
 
     .btn {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      transition: all 0.2s ease;
+      padding: 0.5rem 1rem !important;
+      border: none !important;
+      border-radius: 4px !important;
+      cursor: pointer !important;
+      font-size: 0.85rem !important;
+      font-weight: 500 !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.25rem !important;
+      transition: all 0.2s ease !important;
+      min-width: 60px !important;
+      justify-content: center !important;
     }
 
     .btn-small {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem !important;
+      font-size: 0.75rem !important;
+      min-width: 50px !important;
     }
 
     .btn-primary {
@@ -355,7 +361,9 @@
       }
 
       .action-buttons {
-        flex-direction: column;
+        flex-direction: column !important;
+        display: flex !important;
+        gap: 0.25rem !important;
       }
 
       .sidebar {
