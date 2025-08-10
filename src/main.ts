@@ -71,6 +71,8 @@ class App {
       console.log('App initialized successfully');
     } catch (error) {
       console.error('Error initializing app:', error);
+    } finally {
+      // Cleanup if needed
     }
   }
 
@@ -197,6 +199,8 @@ class App {
       console.log('Action buttons added successfully');
     } catch (error) {
       console.error('Error adding action buttons:', error);
+    } finally {
+      // Cleanup if needed
     }
   }
 
@@ -647,6 +651,8 @@ class App {
       this.showToast('Export successful', 'success');
     } catch (error) {
       this.showToast('Export failed', 'error');
+    } finally {
+      // Cleanup if needed
     }
   }
 
@@ -662,6 +668,8 @@ class App {
       this.showToast('Export successful', 'success');
     } catch (error) {
       this.showToast('Export failed', 'error');
+    } finally {
+      // Cleanup if needed
     }
   }
 
