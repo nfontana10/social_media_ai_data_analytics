@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Analytics Tools Cheat Sheet</title>
+  <script type="module" crossorigin src="/assets/index-JMySDZhm.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-imghRJeI.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-content">
+        <h1 class="nav-title">Social Media Analytics Tools</h1>
+        <div class="nav-controls">
+          <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search tools..." class="search-input">
+          </div>
+          <div class="nav-buttons">
+            <button id="saved-btn" class="btn btn-secondary">
+              Saved <span id="saved-count" class="badge">0</span>
+            </button>
+            <button id="export-txt-btn" class="btn btn-secondary">Export TXT</button>
+            <button id="export-pdf-btn" class="btn btn-secondary">Export PDF</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="main-container">
+      <main id="cheatsheet-root" class="cheatsheet-content">
+        <!-- Cheatsheet content will be loaded here -->
+      </main>
+
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h3>Saved Recommendations</h3>
+          <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+            <span class="toggle-icon">×</span>
+          </button>
+        </div>
+        <div id="saved-items" class="saved-items">
+          <!-- Saved items will be rendered here -->
+        </div>
+        <div class="sidebar-footer">
+          <button id="clear-all-btn" class="btn btn-danger">Clear All</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" hidden>
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modal-title">More Information</h3>
+          <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
+        </div>
+        <div class="modal-body">
+          <div id="modal-content"></div>
+          <div class="modal-actions">
+            <button id="save-note-btn" class="btn btn-primary">Save as Note</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" hidden>
+      <span id="toast-message"></span>
+    </div>
+  </div>
+
+</body>
+</html>
