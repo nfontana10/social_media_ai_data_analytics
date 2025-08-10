@@ -12,6 +12,14 @@
       "dest": "/assets/$1"
     },
     {
+      "src": "/favicon_jim_e",
+      "dest": "/favicon_jim_e"
+    },
+    {
+      "src": "/jim_e_brown_website.jpeg",
+      "dest": "/jim_e_brown_website.jpeg"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
